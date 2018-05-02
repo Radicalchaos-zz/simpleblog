@@ -3,12 +3,30 @@
   <head>
     <title>Simpleblog</title>
     <%= csrf_meta_tags %>
-
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css' %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">SimpleBlog</a>
+        <div class="container">
+        <ul class="nav">
+         <li class="nav-item"><%= link_to "Home", home_path %></li>
+       </ul>
+        <ul class="nav justify-content-end">
+         <li class="nav-item"><%= link_to "Create Post", new_post_path %>
+         </li>
+       </ul>
+     </div>
+      </nav>
+
+
+
+   <div class= "container">
+     <%= yield %>
+   </div>
+
   </body>
 </html>
